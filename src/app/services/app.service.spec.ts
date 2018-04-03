@@ -30,13 +30,13 @@ describe('Service', () => {
   });
 
   it('getIssue', () => {
-    service.getIssue(1).subscribe(issues => { });;
+    service.getIssue(1).subscribe(issues => { });
     const req = httpMock.expectOne('https://api.github.com/repos/angular/angular.js/issues/1');
     expect(req.request.method).toBe('GET');
   });
 
   it('getComments', () => {
-    service.getComments(1).subscribe(issues => { });;
+    service.getComments(1).subscribe(issues => { });
     const req = httpMock.expectOne('https://api.github.com/repos/angular/angular.js/issues/1/comments');
     expect(req.request.method).toBe('GET');
   });

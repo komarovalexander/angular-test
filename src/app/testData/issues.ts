@@ -25,7 +25,7 @@ export class IssuesTestData {
       login: '',
       avatar_url: ''
     }
-  }]
+  }];
 
   public static Comments: Comment[] = [{
     body: 'custom text',
@@ -34,4 +34,4 @@ export class IssuesTestData {
       avatar_url: ''
     }
   }];
-};
+}

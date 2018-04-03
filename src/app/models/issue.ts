@@ -8,5 +8,5 @@ export class Issue {
   state: string;
   pull_request: boolean;
   html_url: string;
-  user: User
+  user: User;
 }

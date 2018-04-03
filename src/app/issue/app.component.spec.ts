@@ -37,19 +37,19 @@ describe('IssueComponent', () => {
   }));
 
   it('check issue', async(() => {
-    params.next({'number': '1'});
+    params.next({'number': 1});
     fixture.detectChanges();
     expect(app.issue).toEqual(IssuesTestData.Items[0]);
   }));
 
   it(`check comments`, async(() => {
-    params.next({'number': '1'});
+    params.next({'number': 1});
     fixture.detectChanges();
     app.comments.subscribe(result => expect(result).toEqual(IssuesTestData.Comments));
   }));
 
   it(`check issue without comments`, async(() => {
-    params.next({'number': '2'});
+    params.next({'number': 2});
     fixture.detectChanges();
     expect(app.issue).toEqual(IssuesTestData.Items[1]);
     expect(app.comments).toEqual(undefined);

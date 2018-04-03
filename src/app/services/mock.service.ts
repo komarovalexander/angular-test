@@ -12,7 +12,7 @@ export class MockService {
   }
 
   getIssue(number: number): Observable<Issue> {
-    return of(IssuesTestData.Items.filter(item => item.number == number)[0]);
+    return of(IssuesTestData.Items.filter(item => item.number === number)[0]);
   }
 
   getComments(issueNumber: number): Observable<Comment[]> {

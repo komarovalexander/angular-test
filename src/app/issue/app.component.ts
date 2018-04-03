@@ -17,21 +17,21 @@ export class IssueComponent {
   loadingMessage: string;
 
   constructor(service: Service, private route: ActivatedRoute) {
-    this.loadingMessage = "Loading..";
+    this.loadingMessage = 'Loading..';
     this.route.params.subscribe(params => {
-      let issueNumber = params['number'];
+      const issueNumber = params['number'];
 
       service.getIssue(issueNumber).subscribe(data => {
         this.issue = data;
 
-        if(data.comments > 0){
-          this.loadingMessage = "Loading comments";
+        if (data.comments > 0) {
+          this.loadingMessage = 'Loading comments';
           this.comments = service.getComments(issueNumber);
-          this.comments.subscribe(data => {
-            this.loadingMessage = "";
+          this.comments.subscribe(() => {
+            this.loadingMessage = '';
           });
         } else {
-          this.loadingMessage = "";
+          this.loadingMessage = '';
         }
       });
    });
