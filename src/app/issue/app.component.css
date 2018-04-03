@@ -1,6 +1,7 @@
 h1 {
   font-size: 32px;
   font-weight: normal;
+  word-wrap: break-word;
 }
 
 .issues-link {
@@ -36,6 +37,7 @@ h1 {
 
 .comment .text {
   padding: 5px 15px;
+  word-wrap: break-word;
   font-size: 14px;
 }
 
