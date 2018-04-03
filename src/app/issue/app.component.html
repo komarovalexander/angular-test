@@ -1,25 +1,25 @@
-<!--The content below is only a placeholder and can be replaced.-->
+<a class="issues-link" routerLink="/issues">Back to the issues list</a>
+
 <div class="issue" *ngIf="issue">
     <h1>{{ issue.title }} <span class="issue-number">#{{ issue.number }}</span></h1>
-    <img class="avatar" [src]="issue.user.avatar_url" />
-    <div class="comment">
-      <div class="author">{{issue.user.login}}</div>
-      <div class="text">
-          <markdown [data]="issue.body"></markdown>
-      </div>
-    </div>
+    <ng-container *ngTemplateOutlet="commentTemplate;context:issue"></ng-container>
 
     <div *ngFor="let comment of comments | async">
-        <img class="avatar" [src]="comment.user.avatar_url" />
-        <div class="comment">
-          <div class="author">{{comment.user.login}}</div>
-          <div class="text">
-              <markdown [data]="comment.body"></markdown>
-          </div>
-        </div>
+      <ng-container *ngTemplateOutlet="commentTemplate;context:comment"></ng-container>
     </div>
 </div>
+
 <div *ngIf="loadingMessage">
   {{ loadingMessage }}
 </div>
 
+<ng-template #commentTemplate let-user="user" let-body="body">
+    <img class="avatar" [src]="user.avatar_url" />
+    <div class="comment">
+      <div class="author">{{user.login}}</div>
+      <div class="text">
+        <markdown  *ngIf="body" [data]="body"></markdown>
+        <i *ngIf="!body">No description provided.</i>
+      </div>
+    </div>
+</ng-template>
