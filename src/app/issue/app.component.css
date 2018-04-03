@@ -1,0 +1,39 @@
+h1 {
+  font-size: 32px;
+  font-weight: normal;
+}
+
+.issue-number {
+  font-weight: 300;
+  color: #a3aab1;
+}
+
+.comment {
+  border: 1px solid #d1d5da;
+  border-radius: 3px;
+  margin-left: 54px;
+  margin-bottom: 20px;
+}
+
+.avatar {
+  float: left;
+  width: 44px;
+  height: 44px;
+}
+
+.comment .author {
+  padding: 15px;
+  font-weight: 600;
+  color: #586069;
+  background-color: #f6f8fa;
+  border-bottom: 1px solid #d1d5da;
+}
+
+.comment .text {
+  padding: 5px 15px;
+  font-size: 14px;
+}
+
+/deep/ .comment img {
+  max-width: 100%;
+}
